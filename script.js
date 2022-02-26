@@ -17,21 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
     reset.classList.add('disable');
     reset.style['pointer-events'] = 'none';
 
-    // options
     buttons.forEach(button => {
         button.onclick = () => {
-
-            // set custom value to nth
             custom.value = '';
             custom.removeAttribute('id');
 
-            // toggle active class
             button.classList.toggle('active');
 
             ready[2] = true;
             tip = button.dataset.tip;
 
-            // check if the button is alrealy active or not and add hover effect
             if (button.classList.contains('active')) {
                 button.classList.remove('hover');
             }
@@ -41,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 ready[2] = false;
             }
 
-            // deactivate all other active buttons
             buttons.forEach(element => {
                 if (element === button) return;
                 element.classList.remove('active');
@@ -50,10 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // custom input
     custom.onkeyup = () => {
 
-        // check validity
         if ((custom.value <= 100 && custom.value >= 0) && custom.value) {
             tip = custom.value;
             custom.removeAttribute('id');
@@ -64,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ready[2] = false;
             custom.removeAttribute('id');
         }
-        // if not valid add warning id
+        
         else {
             tip = null;
             custom.setAttribute('id', 'warning');
