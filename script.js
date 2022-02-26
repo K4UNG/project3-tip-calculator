@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     tipResult.innerHTML = '0.00';
     totalResult.innerHTML = '0.00';
 
+    reset.classList.add('disable');
+    reset.style['pointer-events'] = 'none';
+
     // options
     buttons.forEach(button => {
         button.onclick = () => {
