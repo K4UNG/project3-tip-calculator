@@ -13,6 +13,8 @@
   <title>Frontend Mentor | Tip calculator app</title>
 
   <link rel="stylesheet" href="styles.css">
+
+  <script src="script.js"></script>
 </head>
 <body>
 
@@ -22,32 +24,50 @@
 
     <div class="fields">
       <div class="bill">
-        Bill <input type="number">
+        Bill <input type="number" data-index="0" class="input" placeholder="0">
       </div>
       <div class="options">
         <span>Select Tip %</span>
-        <button class="option">5%</button>
-        <button class="option">10%</button>
-        <button class="option">15%</button>
-        <button class="option">25%</button>
-        <button class="option">50%</button>
-        <input type="number" placeholder="Custom">
+        <button class="option hover" data-tip="5">5%</button>
+        <button class="option hover" data-tip="10">10%</button>
+        <button class="option hover" data-tip="15">15%</button>
+        <button class="option hover" data-tip="25">25%</button>
+        <button class="option hover" data-tip="50">50%</button>
+        <input type="number" placeholder="Custom" class="custom">
       </div>
       <div class="number">
-        Number of People <input type="number">
+        Number of People <input type="number" data-index="1" class="input" placeholder="0">
       </div>
     </div>
 
     <div class="result">
-      <div class="total"></div>
-      <div class="tip"></div>
-      <button id="reset">RESET</button>
+      <div class="container">
+        <div class="tip">
+          <div class="text">
+            <h5>Tip Amount</h6>
+            <p>/ person</p>
+          </div>
+          <h1>$<span class="tip-result"></span></h1>
+        </div>
+
+        <div class="total">
+          <div class="text">
+            <h5>Total</h6>
+            <p>/ person</p>
+          </div>
+          <h1>$<span class="total-result"></span></h1>
+        </div>
+      </div>
+
+      <div class="button">
+        <button id="reset">RESET</button>
+      </div>
     </div>
   </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/K4UNG">K4UNG</a>.
   </div>
 </body>
 </html>
